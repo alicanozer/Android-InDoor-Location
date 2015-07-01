@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/bluetoothstate"
+            android:layout_width="193dp"
+            android:layout_height="38dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="35dp" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/delaySeekbar"
+            android:indeterminate="false"
+            android:layout_below="@+id/bluetoothstate"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/delayTextview"
+            android:text="Delay:"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/delaySwitch"
+            android:layout_toStartOf="@+id/delaySwitch"
+            android:layout_alignTop="@+id/delaySwitch"
+            android:layout_above="@+id/scandevice" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activate"
+            android:id="@+id/delaySwitch"
+            android:layout_gravity="right"
+            android:checked="false"
+            android:layout_below="@+id/delaySeekbar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/scandevice" />
+
+        <Button
+            android:id="@+id/scandevice"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="SCAN"
+            android:enabled="false"
+            android:layout_gravity="left"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="STOP"
+            android:id="@+id/stopdevice"
+            android:layout_below="@+id/delayTextview"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right"/>
+
+        TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textClock"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/scandevice"
+            android:layout_toLeftOf="@+id/stopdevice"
+            android:layout_toRightOf="@+id/scandevice"
+            android:layout_toEndOf="@+id/scandevice"
+            android:gravity="center_vertical|center|center_horizontal" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/devicesfound"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+</LinearLayout>
